@@ -492,8 +492,8 @@
                 <section class="form-section">
                     <form class="form" id="loginForm">
                         <div class="input-group">
-                            <input class="input" type="email" id="email" required placeholder="Email Address"/>
-                            <label class="label" for="email">Email Identifier</label>
+                            <input class="input" type="text" id="username" required placeholder="Username"/>
+                            <label class="label" for="username">Username</label>
                         </div>
 
                         <div class="input-group-password">
@@ -552,7 +552,7 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const username = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
             // Sprawdzenie poprawnych danych logowania
