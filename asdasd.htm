@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Logowanie</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nazwa użytkownika:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit">Zaloguj się</button>
+            </form>
+            
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const messageDiv = document.getElementById('message');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Sprawdzenie poprawnych danych logowania
+            if (username === 'leprofessionneladmin' && password === '123') {
+                messageDiv.textContent = 'Logowanie udane! Przekierowywanie...';
+                messageDiv.style.color = 'green';
+                
+                // Przekierowanie po 1 sekundzie
+                setTimeout(function() {
+                    window.location.href = 'https://sufficient-white-ocelot.host.loki.build/#';
+                }, 1000);
+            } else {
+                messageDiv.textContent = 'Nieprawidłowa nazwa użytkownika lub hasło';
+                messageDiv.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
